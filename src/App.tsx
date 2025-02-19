@@ -16,6 +16,8 @@ import Public from './components/routes/Public';
 import DashboardListPage from './pages/DashboardListPage';
 import DashboardDetailsPage from './pages/DashboardDetailsPage';
 import { DashboardProvider } from './components/context/DashboardRefactor';
+import DeviceListPage from './pages/DeviceListPage';
+import DeviceDetailsPage from './pages/DeviceDetailsPage';
 
 const queryClient = new QueryClient();
 
@@ -69,6 +71,14 @@ function App() {
                         <DashboardDetailsPage />
                       </DashboardProvider>
                     }
+                  />
+                  <Route
+                    path='/devices'
+                    element={< DeviceListPage />}
+                  />
+                   <Route
+                    path='/devices/:id'
+                    element={< DeviceDetailsPage />}
                   />
                   <Route path='/components' element={<ComponentPlayground />} />
                   <Route path='*' element={<NotFound />} />
